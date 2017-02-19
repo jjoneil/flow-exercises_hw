@@ -23,12 +23,12 @@
 
 
         // Player One
-        var score = 193;
-        var last_play = "Q";
-        var broom = "handle";
-        var has_ball = false;
-        var is_in_tree = false;
-        var crying = false;
+        // var score = 193;
+        // var last_play = "Q";
+        // var broom = "handle";
+        // var has_ball = false;
+        // var is_in_tree = false;
+        // var crying = false;
 
 
         //Player Two
@@ -42,12 +42,12 @@
 
         
         // Player Three
-        // var score = "f";
-        // var last_play = 1.5;
-        // var broom = "brush";
-        // var has_ball = true;
-        // var is_in_tree = false;
-        // var crying = true;
+        var score = "f";
+        var last_play = 1.5;
+        var broom = "brush";
+        var has_ball = true;
+        var is_in_tree = false;
+        var crying = true;
 
 
 
@@ -56,9 +56,9 @@
             score = 500;
         } 
 
-        if(crying){
+        if(crying === true){
             score = score - 300;
-        } else {
+        } else if (crying === false) {
             score = score + 50;
         }
 
@@ -66,25 +66,23 @@
             score = score - 77;
         }
 
-        if(is_in_tree && typeof(score) != "number"){
+        if(is_in_tree === true && typeof(last_play) != "number"){
             score = score + 395;
         }
 
-        if(broom = "handle"){
+        if(broom === "handle"){
             score = score * 2;
-        } else if(broom = "brush") {
+        } else if(broom === "brush") {
             score  = score * 3;
         } else {
             score = score / 2;
         }
 
-        if(has_ball && !is_in_tree){
+        if(has_ball == true && is_in_tree == false && crying === false){
             score = score * 1.5;
-        } else if (crying){
-            false;
         }
 
-        if(last_play == 1){
+        if(typeof(last_play) === "number"){
             score = score * last_play;
         };
 
